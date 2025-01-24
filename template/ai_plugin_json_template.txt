@@ -1,0 +1,34 @@
+{{
+    "id": "{id}",
+    "domain": "{domain}",
+    "namespace": "{namespace}",
+    "status": "approved",
+    "manifest": {{
+        "schema_version": "v1",
+        "name_for_model": "{namespace}",
+        "name_for_human": "{namespace}",
+        "description_for_model": "{desc}",
+        "description_for_human": "{desc}",
+        "auth": {{
+            "type": "none"
+        }},
+        "api": {{
+            "type": "openapi",
+            "url": "{yaml_url}"
+        }},
+        "logo_url": null,
+        "contact_email": null,
+        "legal_info_url": null
+    }},
+    "oauth_client_id": null,
+    "user_settings": {{
+        "is_installed": false,
+        "is_authenticated": true
+    }},
+    "categories": [
+        {{
+            "id": "newly_added",
+            "title": "New"
+        }}
+    ]
+}}

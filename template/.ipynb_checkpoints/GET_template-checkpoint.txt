@@ -1,0 +1,16 @@
+import requests
+from urllib.parse import quote
+                
+def {api_name}({param_list}):
+    api_url = f{url}
+    querystring = {querystring}
+    {validate_req_param}
+    response = requests.get(url=api_url, params=querystring, timeout=50)
+    if response.status_code != 200:
+        response2 = requests.get(url=api_url, timeout=50) # in case API can't handle redundant params
+        if response2.status_code != 200:
+            print("--------------------------------------------")
+            print(response.status_code)
+            print(response.text)
+    return response
+    # print(response.json())
