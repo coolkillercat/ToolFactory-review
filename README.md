@@ -13,7 +13,7 @@ APIs are the backbone of modern applications, but their documentation? Not so mu
 
 * 📚 Knowledge Base Magic
   Leverage a curated library of verified tools to fill gaps in poorly documented APIs. 
-  
+
 ![toolfactorypipeline](toolfactorypipeline-1.png)
 ## 🛠 How It Works
 
@@ -48,7 +48,10 @@ Check `main\tool_testing.ipynb` for more details.
 
 ## Export
 Export your tools into `openapi` specification.
-
+```shell
+python post_process\generate_openapi.py extractor\apidocs
+```
+The output yaml specification will be in the api folder.
 
 # For research
 API Extraction Benchmark available on huggingface `[masked]\APIdoc2json`
