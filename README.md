@@ -1,7 +1,7 @@
 # 🏭 ToolFactory: Convert Any REST API Documentation into AI-Usable Tools 🏭
-![toolfactory](toolfactory-logo.pdf)
+![toolfactory](toolfactory-logo-1.png)
 ToolFactory is your one-stop solution for turning messy, unstructured REST API documentation into polished, AI-compatible tools. Built for developers, by developers, it’s designed to take the hassle out of integrating APIs into LLM-based tool agents. Say goodbye to manually parsing through inconsistent docs and hello to a streamlined pipeline for building natural language-enabled tools.
-![toolfactorypipeline](toolfactorypipeline.pdf)
+![toolfactorypipeline](toolfactorypipeline-1.png)
 ## 🏭 What is ToolFactory? 🏭
 
 APIs are the backbone of modern applications, but their documentation? Not so much. ToolFactory automates the transformation of REST API docs—no matter how unstructured—into tools ready to plug into AI workflows. It’s built to make your life easier and your tools smarter.
