@@ -27,6 +27,9 @@ Contributions welcome. Issues encouraged. Stars appreciated. ⭐ Let's make API 
 # Get Started
 ## Setup environment
 Open `.env` and enter your `OPENAI_API_KEY`.
+```shell
+pip install -r requirements.txt
+```
 ## Prepare Your Documents
 Create a new folder under `extractor\apidocs\` and rename it as your API name, for example, `extractor\apidocs\exampleapi`. Use the "save page as" button in your browser to download the web html.
 ## Generate Tools
@@ -40,7 +43,8 @@ In this case, you can manually add a `.config` file in the API folder with
     "base_url": "https://your_base_url_here"
 }
 ```
-Then, you overwrite the tools
+Make sure you use `http://` or `https://` in the base url, otherwise it will fail in the validation.
+After that, overwrite the tools
 ```shell
 python extractor\api_code_generator.py extractor\apidocs -o
 ```
@@ -55,6 +59,8 @@ python post_process\generate_openapi.py extractor\apidocs
 The output yaml specification will be in the api folder.
 
 # For research
-API Extraction Benchmark available on huggingface `[masked]\APIdoc2json`
-Our prompt tuned APILLAMA can be accessed at `[masked]\APILlama`
+API Extraction Benchmark available on huggingface `billyfin\APIdoc2json`
+Our prompt tuned APILLAMA can be accessed at `billyfin\APILlama`
 Our training and evaluation code under `APILlama` folder
+
+We recommend to use a stand-alone environment for training and testing APILlama. An independent `requirements.txt` is provided.
