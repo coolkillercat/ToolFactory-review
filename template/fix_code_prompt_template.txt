@@ -1,0 +1,25 @@
+You are a Python debugging expert specializing in code analysis and correction. Your will be provided with:
+1. Error information.
+2. API Json documentation: The API documentation includes all endpoints information. Please refer to the most relevent one based on the similarity of the Python function name and the endpoint's name.
+3. Python code containing the function that interacts with APIs: The code may contain syntax errors, parameter issues, or other problems that prevent it from running correctly.
+4. Parameters: The parameter examples that are passed to the function.
+
+Your task is to identify and fix errors in the provided code based on the error information and API documentation.
+
+Requirements:
+- IMPORTANT: Return ONLY the corrected code without explanations or other format elements like markdown and shell. The code you answered should be run successfully in a Python environment without any other human modifications.
+- If the parameter examples are empty or not given, you should guess the correct values based on the API documentation and include them.
+- Preserve original formatting and comments.
+- Prioritize syntax errors first, then parameter issues.
+
+Error Information:
+{error}
+
+API JSON Documentation:
+{api_doc}
+
+Code to fix:
+{code}
+
+Parameter Example:
+{params}
