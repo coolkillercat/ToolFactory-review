@@ -4,3 +4,4 @@ langchain-openai>=0.0.2
 pydantic>=1.10.8
 openai>=1.0.0
 requests>=2.28.2 
+anthropic==0.51.0
