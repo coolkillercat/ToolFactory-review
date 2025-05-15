@@ -1,0 +1,1229 @@
+{
+    "title": "Shopping Admin Part 5 API Documentation",
+    "endpoints": [
+        {
+            "name": "Collect Totals for Guest Cart",
+            "description": "Set shipping/billing methods and additional data for cart and collect totals for guest.",
+            "method": "PUT",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/collect-totals",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Coupon Information",
+            "description": "Return information for a coupon in a specified cart.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/coupons",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Delete Coupon",
+            "description": "Delete a coupon from a specified cart.",
+            "method": "DELETE",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/coupons",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Add Coupon to Cart",
+            "description": "Add a coupon by code to a specified cart.",
+            "method": "PUT",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/coupons/{couponCode}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                },
+                {
+                    "name": "couponCode",
+                    "type": "string",
+                    "description": "The coupon code data.",
+                    "default": null,
+                    "example": "SAVE20"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Estimate Shipping Methods",
+            "description": "Estimate shipping by address and return list of available shipping methods.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/estimate-shipping-methods",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Gift Message for Order",
+            "description": "Return the gift message for a specified order.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/gift-message",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The shopping cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Set Gift Message for Order",
+            "description": "Set the gift message for an entire order.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/gift-message",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Gift Message for Item",
+            "description": "Return the gift message for a specified item in a specified shopping cart.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/gift-message/{itemId}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The shopping cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                },
+                {
+                    "name": "itemId",
+                    "type": "integer",
+                    "description": "The item ID.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Set Gift Message for Item",
+            "description": "Set the gift message for a specified item in a specified shopping cart.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/gift-message/{itemId}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                },
+                {
+                    "name": "itemId",
+                    "type": "integer",
+                    "description": "The item ID.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "List Cart Items",
+            "description": "List items that are assigned to a specified cart.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/items",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Add/Update Cart Item",
+            "description": "Add/update the specified cart item.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/items",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Update Cart Item",
+            "description": "Add/update the specified cart item.",
+            "method": "PUT",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/items/{itemId}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                },
+                {
+                    "name": "itemId",
+                    "type": "string",
+                    "description": "The item ID.",
+                    "default": null,
+                    "example": "item123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Remove Cart Item",
+            "description": "Remove the specified item from the specified cart.",
+            "method": "DELETE",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/items/{itemId}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                },
+                {
+                    "name": "itemId",
+                    "type": "integer",
+                    "description": "The item ID of the item to be removed.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Place Order",
+            "description": "Place an order for a specified cart.",
+            "method": "PUT",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/order",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Set Payment Information and Place Order",
+            "description": "Set payment information and place order for a specified cart.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/payment-information",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Payment Information",
+            "description": "Get payment information.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/payment-information",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "List Payment Methods",
+            "description": "List available payment methods for a specified shopping cart.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/payment-methods",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Create Payment Order",
+            "description": "Create a payment order for guest customer.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/payment-order",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Payment Order",
+            "description": "Get payment order for guest customer.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/payment-order/{id}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "The payment order ID.",
+                    "default": null,
+                    "example": "order123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Sync Payment Order",
+            "description": "Sync payment order for guest customer.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/payment-order/{id}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "The payment order ID.",
+                    "default": null,
+                    "example": "order123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Selected Payment Method",
+            "description": "Return the payment method for a specified shopping cart.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/selected-payment-method",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Add Selected Payment Method",
+            "description": "Add a specified payment method to a specified shopping cart.",
+            "method": "PUT",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/selected-payment-method",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Set Payment Information",
+            "description": "Set payment information for a specified cart.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/set-payment-information",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Set Shipping Information",
+            "description": "Set shipping information for a specified cart.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/shipping-information",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "List Shipping Methods",
+            "description": "List applicable shipping methods for a specified quote.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/shipping-methods",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The shopping cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Quote Totals",
+            "description": "Return quote totals data for a specified cart.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/totals",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Calculate Quote Totals",
+            "description": "Calculate quote totals based on address and shipping method.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-carts/{cartId}/totals-information",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Estimate Shipping for Gift Registry",
+            "description": "Estimate shipping for gift registry.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/guest-giftregistry/{cartId}/estimate-shipping-methods",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "cartId",
+                    "type": "string",
+                    "description": "The shopping cart ID.",
+                    "default": null,
+                    "example": "abc123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Move Hierarchy",
+            "description": "Moves teams and users within the company structure.",
+            "method": "PUT",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/hierarchy/move/{id}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "integer",
+                    "description": "The ID of the hierarchy to move.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Hierarchy",
+            "description": "Returns the list of teams and company users in the company structure.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/hierarchy/{id}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "integer",
+                    "description": "The ID of the hierarchy.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Start CSV Import",
+            "description": "Start import operation using CSV.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/import/csv",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Start JSON Import",
+            "description": "Start import operation using JSON.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/import/json",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Create Admin Access Token",
+            "description": "Create access token for admin given the admin credentials.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/integration/admin/token",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Revoke Customer Token",
+            "description": "Revoke token by customer id.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/integration/customer/revoke-customer-token",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Create Customer Access Token",
+            "description": "Create access token for admin given the customer credentials.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/integration/customer/token",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Check Product Salability for Requested Quantity",
+            "description": "Get whether products are salable in requested Qty for given set of SKUs in specified stock.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/are-product-salable-for-requested-qty/",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "stockId",
+                    "type": "integer",
+                    "description": "The stock ID.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "skuRequests[0][sku]",
+                    "type": "string",
+                    "description": "Product SKU.",
+                    "default": null,
+                    "example": "SKU123"
+                },
+                {
+                    "name": "skuRequests[0][qty]",
+                    "type": "number",
+                    "description": "Product quantity.",
+                    "default": null,
+                    "example": 10
+                }
+            ]
+        },
+        {
+            "name": "Get Products Salable Status",
+            "description": "Get products salable status for given SKUs and given Stock.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/are-products-salable",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "skus",
+                    "type": "array",
+                    "description": "Array of product SKUs.",
+                    "default": null,
+                    "example": [
+                        "SKU123",
+                        "SKU456"
+                    ]
+                },
+                {
+                    "name": "stockId",
+                    "type": "integer",
+                    "description": "The stock ID.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Bulk Partial Source Transfer",
+            "description": "Run bulk partial inventory transfer for specified items.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/bulk-partial-source-transfer",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Bulk Product Source Assign",
+            "description": "Run mass product to source assignment.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/bulk-product-source-assign",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Bulk Product Source Transfer",
+            "description": "Run bulk inventory transfer.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/bulk-product-source-transfer",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Bulk Product Source Unassign",
+            "description": "Run mass product to source un-assignment.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/bulk-product-source-unassign",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Dump Stock Index Data",
+            "description": "Provides stock index export from inventory_stock_% table.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/dump-stock-index-data/{salesChannelType}/{salesChannelCode}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "salesChannelType",
+                    "type": "string",
+                    "description": "The sales channel type.",
+                    "default": null,
+                    "example": "online"
+                },
+                {
+                    "name": "salesChannelCode",
+                    "type": "string",
+                    "description": "The sales channel code.",
+                    "default": null,
+                    "example": "channel123"
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Export Stock Salable Quantity",
+            "description": "Export product stock data filtered by search criteria.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/export-stock-salable-qty/{salesChannelType}/{salesChannelCode}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "salesChannelType",
+                    "type": "string",
+                    "description": "The sales channel type.",
+                    "default": null,
+                    "example": "online"
+                },
+                {
+                    "name": "salesChannelCode",
+                    "type": "string",
+                    "description": "The sales channel code.",
+                    "default": null,
+                    "example": "channel123"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "searchCriteria[filterGroups][0][filters][0][field]",
+                    "type": "string",
+                    "description": "Field for filtering.",
+                    "default": null,
+                    "example": "price"
+                },
+                {
+                    "name": "searchCriteria[filterGroups][0][filters][0][value]",
+                    "type": "string",
+                    "description": "Value for filtering.",
+                    "default": null,
+                    "example": "100"
+                },
+                {
+                    "name": "searchCriteria[filterGroups][0][filters][0][conditionType]",
+                    "type": "string",
+                    "description": "Condition type for filtering.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchCriteria[sortOrders][0][field]",
+                    "type": "string",
+                    "description": "Sorting field.",
+                    "default": null,
+                    "example": "name"
+                },
+                {
+                    "name": "searchCriteria[sortOrders][0][direction]",
+                    "type": "string",
+                    "description": "Sorting direction.",
+                    "default": null,
+                    "example": "ASC"
+                },
+                {
+                    "name": "searchCriteria[pageSize]",
+                    "type": "integer",
+                    "description": "Page size.",
+                    "default": null,
+                    "example": 20
+                },
+                {
+                    "name": "searchCriteria[currentPage]",
+                    "type": "integer",
+                    "description": "Current page.",
+                    "default": null,
+                    "example": 1
+                }
+            ]
+        },
+        {
+            "name": "Get Distance",
+            "description": "Get distance between two points.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/get-distance",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "source[lat]",
+                    "type": "number",
+                    "description": "Source latitude.",
+                    "default": null,
+                    "example": 40.7128
+                },
+                {
+                    "name": "source[lng]",
+                    "type": "number",
+                    "description": "Source longitude.",
+                    "default": null,
+                    "example": -74.006
+                },
+                {
+                    "name": "destination[lat]",
+                    "type": "number",
+                    "description": "Destination latitude.",
+                    "default": null,
+                    "example": 34.0522
+                },
+                {
+                    "name": "destination[lng]",
+                    "type": "number",
+                    "description": "Destination longitude.",
+                    "default": null,
+                    "example": -118.2437
+                }
+            ]
+        },
+        {
+            "name": "Get Distance Provider Code",
+            "description": "Get Default distance provider code.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/get-distance-provider-code",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get LatLng from Address",
+            "description": "Get latitude and longitude object from address.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/get-latlng-from-address",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "address[country]",
+                    "type": "string",
+                    "description": "Shipping country.",
+                    "default": null,
+                    "example": "US"
+                },
+                {
+                    "name": "address[postcode]",
+                    "type": "string",
+                    "description": "Shipping postcode.",
+                    "default": null,
+                    "example": "10001"
+                },
+                {
+                    "name": "address[street]",
+                    "type": "string",
+                    "description": "Shipping street address.",
+                    "default": null,
+                    "example": "123 Main St"
+                },
+                {
+                    "name": "address[region]",
+                    "type": "string",
+                    "description": "Shipping region.",
+                    "default": null,
+                    "example": "NY"
+                },
+                {
+                    "name": "address[city]",
+                    "type": "string",
+                    "description": "Shipping city.",
+                    "default": null,
+                    "example": "New York"
+                }
+            ]
+        },
+        {
+            "name": "Get All LatLngs from Address",
+            "description": "Get all available latitude and longitude objects from address.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/get-latslngs-from-address",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "address[country]",
+                    "type": "string",
+                    "description": "Shipping country.",
+                    "default": null,
+                    "example": "US"
+                },
+                {
+                    "name": "address[postcode]",
+                    "type": "string",
+                    "description": "Shipping postcode.",
+                    "default": null,
+                    "example": "10001"
+                },
+                {
+                    "name": "address[street]",
+                    "type": "string",
+                    "description": "Shipping street address.",
+                    "default": null,
+                    "example": "123 Main St"
+                },
+                {
+                    "name": "address[region]",
+                    "type": "string",
+                    "description": "Shipping region.",
+                    "default": null,
+                    "example": "NY"
+                },
+                {
+                    "name": "address[city]",
+                    "type": "string",
+                    "description": "Shipping city.",
+                    "default": null,
+                    "example": "New York"
+                }
+            ]
+        },
+        {
+            "name": "Get Product Salable Quantity",
+            "description": "Get Product Quantity for given SKU and Stock.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/get-product-salable-quantity/{sku}/{stockId}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "sku",
+                    "type": "string",
+                    "description": "The product SKU.",
+                    "default": null,
+                    "example": "SKU123"
+                },
+                {
+                    "name": "stockId",
+                    "type": "integer",
+                    "description": "The stock ID.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Sources Assigned to Stock",
+            "description": "Get Sources assigned to Stock ordered by priority.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/{stockId}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "stockId",
+                    "type": "integer",
+                    "description": "The stock ID.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Get Pickup Locations",
+            "description": "Get Pickup Locations according to the results of filtration by Search Request.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/in-store-pickup/pickup-locations/",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "searchRequest[area][radius]",
+                    "type": "integer",
+                    "description": "Search radius in KM.",
+                    "default": null,
+                    "example": 10
+                },
+                {
+                    "name": "searchRequest[area][searchTerm]",
+                    "type": "string",
+                    "description": "Search term string.",
+                    "default": null,
+                    "example": "store"
+                },
+                {
+                    "name": "searchRequest[filters][country][value]",
+                    "type": "string",
+                    "description": "Country value.",
+                    "default": null,
+                    "example": "US"
+                },
+                {
+                    "name": "searchRequest[filters][country][conditionType]",
+                    "type": "string",
+                    "description": "Country condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[filters][postcode][value]",
+                    "type": "string",
+                    "description": "Postcode value.",
+                    "default": null,
+                    "example": "10001"
+                },
+                {
+                    "name": "searchRequest[filters][postcode][conditionType]",
+                    "type": "string",
+                    "description": "Postcode condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[filters][region][value]",
+                    "type": "string",
+                    "description": "Region value.",
+                    "default": null,
+                    "example": "NY"
+                },
+                {
+                    "name": "searchRequest[filters][region][conditionType]",
+                    "type": "string",
+                    "description": "Region condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[filters][regionId][value]",
+                    "type": "string",
+                    "description": "Region ID value.",
+                    "default": null,
+                    "example": "1"
+                },
+                {
+                    "name": "searchRequest[filters][regionId][conditionType]",
+                    "type": "string",
+                    "description": "Region ID condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[filters][city][value]",
+                    "type": "string",
+                    "description": "City value.",
+                    "default": null,
+                    "example": "New York"
+                },
+                {
+                    "name": "searchRequest[filters][city][conditionType]",
+                    "type": "string",
+                    "description": "City condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[filters][street][value]",
+                    "type": "string",
+                    "description": "Street value.",
+                    "default": null,
+                    "example": "Main St"
+                },
+                {
+                    "name": "searchRequest[filters][street][conditionType]",
+                    "type": "string",
+                    "description": "Street condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[filters][name][value]",
+                    "type": "string",
+                    "description": "Name value.",
+                    "default": null,
+                    "example": "Store Name"
+                },
+                {
+                    "name": "searchRequest[filters][name][conditionType]",
+                    "type": "string",
+                    "description": "Name condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[filters][pickupLocationCode][value]",
+                    "type": "string",
+                    "description": "Pickup location code value.",
+                    "default": null,
+                    "example": "LOC123"
+                },
+                {
+                    "name": "searchRequest[filters][pickupLocationCode][conditionType]",
+                    "type": "string",
+                    "description": "Pickup location code condition type.",
+                    "default": null,
+                    "example": "eq"
+                },
+                {
+                    "name": "searchRequest[pageSize]",
+                    "type": "integer",
+                    "description": "Page size.",
+                    "default": null,
+                    "example": 20
+                },
+                {
+                    "name": "searchRequest[currentPage]",
+                    "type": "integer",
+                    "description": "Current page.",
+                    "default": null,
+                    "example": 1
+                },
+                {
+                    "name": "searchRequest[scopeType]",
+                    "type": "string",
+                    "description": "Sales Channel Type.",
+                    "default": null,
+                    "example": "online"
+                },
+                {
+                    "name": "searchRequest[scopeCode]",
+                    "type": "string",
+                    "description": "Sales Channel code.",
+                    "default": null,
+                    "example": "channel123"
+                },
+                {
+                    "name": "searchRequest[sort][0][field]",
+                    "type": "string",
+                    "description": "Sorting field.",
+                    "default": null,
+                    "example": "name"
+                },
+                {
+                    "name": "searchRequest[sort][0][direction]",
+                    "type": "string",
+                    "description": "Sorting direction.",
+                    "default": null,
+                    "example": "ASC"
+                },
+                {
+                    "name": "searchRequest[extensionAttributes][productsInfo][0][sku]",
+                    "type": "string",
+                    "description": "Product SKU.",
+                    "default": null,
+                    "example": "SKU123"
+                }
+            ]
+        },
+        {
+            "name": "Check Product Salability for Quantity",
+            "description": "Get is product salable for given SKU in a given Stock for a certain Qty.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/is-product-salable-for-requested-qty/{sku}/{stockId}/{requestedQty}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "sku",
+                    "type": "string",
+                    "description": "The product SKU.",
+                    "default": null,
+                    "example": "SKU123"
+                },
+                {
+                    "name": "stockId",
+                    "type": "integer",
+                    "description": "The stock ID.",
+                    "default": null,
+                    "example": 1
+                },
+                {
+                    "name": "requestedQty",
+                    "type": "number",
+                    "description": "The requested quantity.",
+                    "default": null,
+                    "example": 10
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Check Product Salability",
+            "description": "Get is product in salable for given SKU in a given Stock.",
+            "method": "GET",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/is-product-salable/{sku}/{stockId}",
+            "headers": [],
+            "required_parameters": [
+                {
+                    "name": "sku",
+                    "type": "string",
+                    "description": "The product SKU.",
+                    "default": null,
+                    "example": "SKU123"
+                },
+                {
+                    "name": "stockId",
+                    "type": "integer",
+                    "description": "The stock ID.",
+                    "default": null,
+                    "example": 1
+                }
+            ],
+            "optional_parameters": []
+        },
+        {
+            "name": "Low Quantity Notification",
+            "description": "Send low quantity notification.",
+            "method": "POST",
+            "url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default/V1/inventory/low-quantity-notification",
+            "headers": [],
+            "required_parameters": [],
+            "optional_parameters": []
+        }
+    ]
+}
