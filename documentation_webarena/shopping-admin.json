@@ -1,5 +1,5 @@
 {
-  "server_url": "http://ec2-18-219-239-190.us-east-2.compute.amazonaws.com:7770/rest/default",
+  "server_url": "http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default",
   "paths": {
     "/V1/addresses/{addressId}": {
       "delete": {
