@@ -198,7 +198,7 @@ def main():
     parser.add_argument(
         '-n', '--num-chunks',
         type=int,
-        default=10,
+        default=50,
         help='Number of chunks to split the file into (default: 5)'
     )
     parser.add_argument(
