@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>shopping-admin_part6 API Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        pre { background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        .endpoint { margin-bottom: 30px; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
+        .method { font-weight: bold; color: #009900; }
+        .path { font-weight: bold; }
+        h2 { color: #333366; }
+        .parameter { margin-left: 20px; }
+        .required { color: #cc0000; }
+        .optional { color: #666666; }
+    </style>
+</head>
+<body>
+    <h1>shopping-admin_part6 API Documentation</h1>
+    <p>Server URL: http://ec2-3-129-135-45.us-east-2.compute.amazonaws.com:7770/rest/default</p>
+    
+    <h2>Endpoints</h2>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/low-quantity-notification/{sourceCode}/{sku}</span></p>
+        <p>Get the source item configuration</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>sourceCode</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter required">
+            <p><strong>sku</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>500</strong> - Internal Server error</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/low-quantity-notifications-delete</span></p>
+        <p>Delete multiple source items configuration for low quantity</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/source-items</span></p>
+        <p>Find SourceItems by SearchCriteria We need to have this method for direct work with SourceItems because this object contains additional data like as qty, status (for example can be searchable by additional field)</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][field]</strong> (query) - Optional</p>
+            <p>Field</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][value]</strong> (query) - Optional</p>
+            <p>Value</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][conditionType]</strong> (query) - Optional</p>
+            <p>Condition type</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][field]</strong> (query) - Optional</p>
+            <p>Sorting field.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][direction]</strong> (query) - Optional</p>
+            <p>Sorting direction.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[pageSize]</strong> (query) - Optional</p>
+            <p>Page size.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[currentPage]</strong> (query) - Optional</p>
+            <p>Current page.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/source-items</span></p>
+        <p>Save Multiple Source item data</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/source-items-delete</span></p>
+        <p>Delete Multiple Source item data</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/source-selection-algorithm-list</span></p>
+        <p></p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/source-selection-algorithm-result</span></p>
+        <p></p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/sources</span></p>
+        <p>Find Sources by SearchCriteria SearchCriteria is not required because load all stocks is useful case</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][field]</strong> (query) - Optional</p>
+            <p>Field</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][value]</strong> (query) - Optional</p>
+            <p>Value</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][conditionType]</strong> (query) - Optional</p>
+            <p>Condition type</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][field]</strong> (query) - Optional</p>
+            <p>Sorting field.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][direction]</strong> (query) - Optional</p>
+            <p>Sorting direction.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[pageSize]</strong> (query) - Optional</p>
+            <p>Page size.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[currentPage]</strong> (query) - Optional</p>
+            <p>Current page.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/sources</span></p>
+        <p>Save Source data</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/sources/{sourceCode}</span></p>
+        <p>Get Source data by given code. If you want to create plugin on get method, also you need to create separate plugin on getList method, because entity loading way is different for these methods</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>sourceCode</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">PUT</span> <span class="path">/V1/inventory/sources/{sourceCode}</span></p>
+        <p>Save Source data</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>sourceCode</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/stock-resolver/{type}/{code}</span></p>
+        <p>Resolve Stock by Sales Channel type and code</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>type</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter required">
+            <p><strong>code</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/stock-source-links</span></p>
+        <p>Find StockSourceLink list by given SearchCriteria</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][field]</strong> (query) - Optional</p>
+            <p>Field</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][value]</strong> (query) - Optional</p>
+            <p>Value</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][conditionType]</strong> (query) - Optional</p>
+            <p>Condition type</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][field]</strong> (query) - Optional</p>
+            <p>Sorting field.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][direction]</strong> (query) - Optional</p>
+            <p>Sorting direction.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[pageSize]</strong> (query) - Optional</p>
+            <p>Page size.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[currentPage]</strong> (query) - Optional</p>
+            <p>Current page.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/stock-source-links</span></p>
+        <p>Save StockSourceLink list data</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/stock-source-links-delete</span></p>
+        <p>Remove StockSourceLink list list</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/stocks</span></p>
+        <p>Find Stocks by given SearchCriteria SearchCriteria is not required because load all stocks is useful case</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][field]</strong> (query) - Optional</p>
+            <p>Field</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][value]</strong> (query) - Optional</p>
+            <p>Value</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][conditionType]</strong> (query) - Optional</p>
+            <p>Condition type</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][field]</strong> (query) - Optional</p>
+            <p>Sorting field.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][direction]</strong> (query) - Optional</p>
+            <p>Sorting direction.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[pageSize]</strong> (query) - Optional</p>
+            <p>Page size.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[currentPage]</strong> (query) - Optional</p>
+            <p>Current page.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/inventory/stocks</span></p>
+        <p>Save Stock data</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/inventory/stocks/{stockId}</span></p>
+        <p>Get Stock data by given stockId. If you want to create plugin on get method, also you need to create separate plugin on getList method, because entity loading way is different for these methods</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>stockId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">DELETE</span> <span class="path">/V1/inventory/stocks/{stockId}</span></p>
+        <p>Delete the Stock data by stockId. If stock is not found do nothing</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>stockId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">PUT</span> <span class="path">/V1/inventory/stocks/{stockId}</span></p>
+        <p>Save Stock data</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>stockId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/invoice/{invoiceId}/refund</span></p>
+        <p>Create refund for invoice</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>invoiceId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/invoices</span></p>
+        <p>Lists invoices that match specified search criteria. This call returns an array of objects, but detailed information about each object’s attributes might not be included. See https://developer.adobe.com/commerce/webapi/rest/attributes#InvoiceRepositoryInterface to determine which call to use to get detailed information about all attributes for an object.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][field]</strong> (query) - Optional</p>
+            <p>Field</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][value]</strong> (query) - Optional</p>
+            <p>Value</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][conditionType]</strong> (query) - Optional</p>
+            <p>Condition type</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][field]</strong> (query) - Optional</p>
+            <p>Sorting field.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][direction]</strong> (query) - Optional</p>
+            <p>Sorting direction.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[pageSize]</strong> (query) - Optional</p>
+            <p>Page size.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[currentPage]</strong> (query) - Optional</p>
+            <p>Current page.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/invoices/</span></p>
+        <p>Performs persist operations for a specified invoice.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/invoices/comments</span></p>
+        <p>Performs persist operations for a specified invoice comment.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/invoices/{id}</span></p>
+        <p>Loads a specified invoice.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>id</strong> (path) - Required</p>
+            <p>The invoice ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/invoices/{id}/capture</span></p>
+        <p>Sets invoice capture.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>id</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/invoices/{id}/comments</span></p>
+        <p>Lists comments for a specified invoice.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>id</strong> (path) - Required</p>
+            <p>The invoice ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/invoices/{id}/emails</span></p>
+        <p>Emails a user a specified invoice.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>id</strong> (path) - Required</p>
+            <p>The invoice ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/invoices/{id}/void</span></p>
+        <p>Voids a specified invoice.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>id</strong> (path) - Required</p>
+            <p>The invoice ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/modules</span></p>
+        <p>Returns an array of enabled modules</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-cart-item-note</span></p>
+        <p>Set the note for an item in negotiable quote.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>500</strong> - Internal Server error</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/negotiable-cart-item-note/search</span></p>
+        <p>Get list of item notes</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][field]</strong> (query) - Optional</p>
+            <p>Field</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][value]</strong> (query) - Optional</p>
+            <p>Value</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[filterGroups][0][filters][0][conditionType]</strong> (query) - Optional</p>
+            <p>Condition type</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][field]</strong> (query) - Optional</p>
+            <p>Sorting field.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[sortOrders][0][direction]</strong> (query) - Optional</p>
+            <p>Sorting direction.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[pageSize]</strong> (query) - Optional</p>
+            <p>Page size.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter optional">
+            <p><strong>searchCriteria[currentPage]</strong> (query) - Optional</p>
+            <p>Current page.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>500</strong> - Internal Server error</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/negotiable-cart-item-note/{noteId}</span></p>
+        <p>Get item note by ID</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>noteId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>500</strong> - Internal Server error</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">DELETE</span> <span class="path">/V1/negotiable-cart-item-note/{noteId}</span></p>
+        <p>Delete item note by ID.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>noteId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>500</strong> - Internal Server error</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/negotiable-carts/{cartId}/billing-address</span></p>
+        <p>Returns the billing address for a specified quote.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p>The cart ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-carts/{cartId}/billing-address</span></p>
+        <p>Assigns a specified billing address to a specified cart.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p>The cart ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">DELETE</span> <span class="path">/V1/negotiable-carts/{cartId}/coupons</span></p>
+        <p>Deletes a coupon from a specified cart.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p>The cart ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">PUT</span> <span class="path">/V1/negotiable-carts/{cartId}/coupons/{couponCode}</span></p>
+        <p>Adds a coupon by code to a specified cart.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p>The cart ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter required">
+            <p><strong>couponCode</strong> (path) - Required</p>
+            <p>The coupon code data.</p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-carts/{cartId}/estimate-shipping-methods</span></p>
+        <p>Estimate shipping by address and return list of available shipping methods</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-carts/{cartId}/estimate-shipping-methods-by-address-id</span></p>
+        <p>Estimate shipping</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p>The shopping cart ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-carts/{cartId}/giftCards</span></p>
+        <p></p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">DELETE</span> <span class="path">/V1/negotiable-carts/{cartId}/giftCards/{giftCardCode}</span></p>
+        <p>Remove GiftCard Account entity</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+
+        <div class="parameter required">
+            <p><strong>giftCardCode</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-carts/{cartId}/payment-information</span></p>
+        <p>Set payment information and place order for a specified cart.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>500</strong> - Internal Server error</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/negotiable-carts/{cartId}/payment-information</span></p>
+        <p>Get payment information</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-carts/{cartId}/set-payment-information</span></p>
+        <p>Set payment information for a specified cart.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiable-carts/{cartId}/shipping-information</span></p>
+        <p></p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/negotiable-carts/{cartId}/totals</span></p>
+        <p>Returns quote totals data for a specified cart.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>cartId</strong> (path) - Required</p>
+            <p>The cart ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/negotiableQuote/attachmentContent</span></p>
+        <p>Returns content for one or more files attached on the quote comment.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>attachmentIds</strong> (query) - Required</p>
+            <p></p>
+            <p>Type: {"type": "array", "items": {"type": "integer"}}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiableQuote/decline</span></p>
+        <p>Decline the B2B quote. All custom pricing will be removed from this quote. The buyer will be able to place an order using their standard catalog prices and discounts.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiableQuote/draft</span></p>
+        <p>Create a new empty B2B quote with NegotiableQuoteInterface::STATUS_DRAFT_BY_ADMIN status.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiableQuote/pricesUpdated</span></p>
+        <p>Refreshes item prices, taxes, discounts, cart rules in the negotiable quote as per the latest changes in the catalog / shared catalog and in the price rules. Depending on the negotiable quote state and totals, all or just some of quote numbers will be recalculated. 'Update Prices' parameter forces refresh on any quote that is not locked for admin user, including the quotes with a negotiated price. The request can be applied to one or more quotes at the same time.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiableQuote/request</span></p>
+        <p>Create a B2B quote based on a regular Magento quote. If the B2B quote requires a shipping address (for negotiation or tax calculations), add it to the regular quote before you create a B2B quote.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <span class="path">/V1/negotiableQuote/submitToCustomer</span></p>
+        <p>Submit the B2B quote to the customer. The quote status for the customer will be changed to 'Updated', and the customer can work with the quote.</p>
+        
+        <h3>Parameters</h3>
+        <p>No parameters</p>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">PUT</span> <span class="path">/V1/negotiableQuote/{quoteId}</span></p>
+        <p>Save quote</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>quoteId</strong> (path) - Required</p>
+            <p></p>
+            <p>Type: {"type": "string"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <span class="path">/V1/negotiableQuote/{quoteId}/comments</span></p>
+        <p>Returns comments for a specified negotiable quote.</p>
+        
+        <h3>Parameters</h3>
+
+        <div class="parameter required">
+            <p><strong>quoteId</strong> (path) - Required</p>
+            <p>Negotiable Quote ID.</p>
+            <p>Type: {"type": "integer"}</p>
+        </div>
+        <h3>Responses</h3>
+
+        <div class="response">
+            <p><strong>200</strong> - 200 Success.</p>
+        </div>
+
+        <div class="response">
+            <p><strong>400</strong> - 400 Bad Request</p>
+        </div>
+
+        <div class="response">
+            <p><strong>401</strong> - 401 Unauthorized</p>
+        </div>
+
+        <div class="response">
+            <p><strong>default</strong> - Unexpected error</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -15,7 +15,7 @@ import markdown
 from docutils.core import publish_string
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SOURCE_DIR = SCRIPT_DIR / "API-Based-Agent" / "workspace"
+SOURCE_DIR = SCRIPT_DIR / "documentation_webarena"/"map"
 TARGET_DIR = SCRIPT_DIR / "extractor" / "apidocs"
 
 def create_config_file(api_name, base_url):
